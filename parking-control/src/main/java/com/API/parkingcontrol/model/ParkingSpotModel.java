@@ -63,7 +63,7 @@ public class ParkingSpotModel implements Serializable {
 
     public String getApartment() {return apartment;}
     public void setApartment(String apartment) {this.apartment = apartment;}
-    
+
     public String getBlock() {return block;}
     public void setBlock(String block) {this.block = block;}
 }
