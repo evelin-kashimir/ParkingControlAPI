@@ -10,5 +10,8 @@ import java.util.UUID;
 //setando o model e referenciando onde serão feitas as transações
 @Repository //anotação para transações com base de dados
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotModel, UUID> {
+    boolean existsByLicensePlateCar(String licensePlateCar);
+    boolean existsByParkingSpotNumber(String parkingSpotNumber);
+    boolean existsByApartmentAndBlock(String apartment, String block);
 
 }
