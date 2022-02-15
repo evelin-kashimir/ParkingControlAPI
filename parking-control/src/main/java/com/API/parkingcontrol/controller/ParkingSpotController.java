@@ -58,6 +58,7 @@ public class ParkingSpotController {
     @GetMapping("/{id}") //id da vaga - entre { } por ser um id gerado
     public ResponseEntity<Object> getOneParkingSpot(@PathVariable(value = "id")UUID id){
         Optional<ParkingSpotModel> parkingSpotModelOptional = parkingSpotService.findById(id);
+       //verificando se o id existe
         if(!parkingSpotModelOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Parking Spot not found.");
         }
@@ -79,4 +80,15 @@ public class ParkingSpotController {
 *
 * FindAll - SELECT
 * @GetMapping envia o /parking-spot com o método get e traz uma lista de models
+*
+* FindById - SELECT WHERE -
+* @GetMapping("/{id}") com o id na uri
+*(@PathVariable(value = "id")UUID id) como parametro atraves da url
+*Optional<ParkingSpotModel> = Somente uma opcao de toda a lista de cadastro baseado no path variable
+*
+*
+*
+
+
+
 * */

@@ -42,13 +42,16 @@ public class ParkingSpotService {
         return parkingSpotRepository.existsByApartmentAndBlock(apartment, block);
     }
 
-    //SELECT
+    //SELECT ALL
     public List<ParkingSpotModel> findAll() {
         return parkingSpotRepository.findAll();
     }
 
-
     public Optional<ParkingSpotModel> findById(UUID id) {
+        return parkingSpotRepository.findById(id);
     }
+
+
+
 }
 
